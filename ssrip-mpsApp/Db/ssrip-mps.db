@@ -1,0 +1,615 @@
+#
+# Project       : SSRIP MPS Device Support
+# Description   : EPICS device support for SSRIP for Machine Protection System
+# Authors       : Giulia Latini <Giulia Latini@lnf.infn.it> Stefano Pioli <Stefano Pioli@lnf.infn.it>
+#
+
+record(ai, "$(PREFIX,undefined):BOOTUP") {
+    field(DESC, "BootUp Timestamp")
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(MPS_ASYNPORT,undefined)_BOOT_TIMESTAMP_RB 0)INT32_BE")
+    field(EGU,  "ERA")
+    field(PREC, "0")
+    field(SCAN, "I/O Intr")
+}
+
+record(ai, "$(PREFIX,undefined):BENCHMARK") {
+    field(DESC, "FSM Benachmark")
+    field(DTYP, "asynInt32")
+    field(INP,  "@asynMask($(MPS_ASYNPORT,undefined)_BENCHMARK_RB 0 0xFFFF)")
+    field(EGU,  "us")
+    field(HOPR, "0xFFFF")
+    field(LOPR, "0")
+    field(PREC, "0")
+    field(SCAN, "I/O Intr")
+}
+
+record(ai, "$(PREFIX,undefined):TEMP") {
+    field(DESC, "Device Temperature")
+    field(DTYP, "asynInt32")
+    field(INP,  "@asynMask($(MPS_ASYNPORT,undefined)_TEMP_RB 0 0xFFFF)")
+    field(EGU,  "°C")
+    field(HOPR, "0xFFFF")
+    field(LOPR, "0")
+    field(PREC, "0")
+    field(SCAN, "I/O Intr")
+}
+
+record(ai, "$(PREFIX,undefined):WATCHDOG") {
+    field(DESC, "FSM Watchdog")
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(MPS_ASYNPORT,undefined)_WATCHDOG_RB 0)INT32_BE")
+    field(EGU,  "ERA")
+    field(SCAN, "I/O Intr")
+}
+
+record(mbbi,"$(PREFIX,undefined):SLEEP") {
+    field(DESC, "Sleep-mode status")
+    field(DTYP, "asynInt32")
+    field(INP,  "@asynMask($(MPS_ASYNPORT,undefined)_SLEEP_RB 0 0xFFFF)")
+    field(SCAN, "I/O Intr")
+    field(ZRVL, "0")
+    field(ONVL, "1")
+    field(ZRST, "Running")
+    field(ONST, "Sleeping")
+}
+
+record(mbbo,"$(PREFIX,undefined):RESET") {
+    field(DESC, "Reset FSM")
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asynMask($(MPS_ASYNPORT,undefined)_RESET_SP 0 0xFFFF)")
+    field(ZRVL, "0")
+    field(ONVL, "1")
+    field(ZRST, "No Reset")
+    field(ONST, "Reset")
+}
+
+
+
+record(mbbo,"$(PREFIX,undefined):ACK_SP") {
+    field(DESC, "ACK")
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asynMask($(MPS_ASYNPORT,undefined)_ACK_SP 0 0xFFFF)")
+    field(ZRVL, "0")
+    field(ONVL, "1")
+    field(ZRST, "Idle")
+    field(ONST, "Ack")
+}
+
+
+
+record(mbbiDirect,"$(PREFIX,undefined):ENABLE_RAW") {
+    field(DESC, "MPS Enable status")
+    field(DTYP, "asynUInt32Digital")
+    field(INP,  "@asynMask($(MPS_ASYNPORT,undefined)_ENABLE_RB 0 0xFFFF)")
+    field(SCAN, "I/O Intr")
+    field(FLNK, "$(PREFIX,undefined):ENABLE")
+}
+record(bi, "$(PREFIX,undefined):ENABLE") {
+    field(DESC, "MPS Enable")
+    field(INP,  "$(PREFIX,undefined):ENABLE_RAW.B0")
+    field(SCAN, "Passive")
+    field(ZNAM, "Disabled")
+    field(ONAM, "Enabled")
+}
+
+
+
+record(mbboDirect,"$(PREFIX,undefined):BYPASS:VAC_COR_SP") {
+    field(DESC, "Bypass: VAC Coridor devices")
+    field(DTYP, "asynUInt32Digital")
+    field(OUT,  "@asynMask($(MPS_ASYNPORT,undefined)_BYPASS_VAC_COR_SP 0 0xFFFF)")
+}
+record(bo, "$(PREFIX,undefined):BYPASS:VAC_COR_B0") {
+    field(DESC, "Bypass: VAC Coridor bit0")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:VAC_COR_SP.B0")
+    field(ZNAM, "NoInterlock")
+    field(ONAM, "Interlock")
+}
+record(bo, "$(PREFIX,undefined):BYPASS:VAC_COR_B1") {
+    field(DESC, "Bypass: VAC Coridor bit1")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:VAC_COR_SP.B1")
+    field(ZNAM, "NoInterlock")
+    field(ONAM, "Interlock")
+}
+record(bo, "$(PREFIX,undefined):BYPASS:VAC_COR_B2") {
+    field(DESC, "Bypass: VAC Coridor bit2")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:VAC_COR_SP.B2")
+    field(ZNAM, "NoInterlock")
+    field(ONAM, "Interlock")
+}
+record(bo, "$(PREFIX,undefined):BYPASS:VAC_COR_B3") {
+    field(DESC, "Bypass: VAC Coridor bit3")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:VAC_COR_SP.B3")
+    field(ZNAM, "NoInterlock")
+    field(ONAM, "Interlock")
+}
+record(bo, "$(PREFIX,undefined):BYPASS:VAC_COR_B4") {
+    field(DESC, "Bypass: VAC Coridor bit4")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:VAC_COR_SP.B4")
+    field(ZNAM, "NoInterlock")
+    field(ONAM, "Interlock")
+}
+record(bo, "$(PREFIX,undefined):BYPASS:VAC_COR_B5") {
+    field(DESC, "Bypass: VAC Coridor bit5")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:VAC_COR_SP.B5")
+    field(ZNAM, "NoInterlock")
+    field(ONAM, "Interlock")
+}
+record(bo, "$(PREFIX,undefined):BYPASS:VAC_COR_B6") {
+    field(DESC, "Bypass: VAC Coridor bit6")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:VAC_COR_SP.B6")
+    field(ZNAM, "NoInterlock")
+    field(ONAM, "Interlock")
+}
+record(bo, "$(PREFIX,undefined):BYPASS:VAC_COR_B7") {
+    field(DESC, "Bypass: VAC Coridor bit7")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:VAC_COR_SP.B7")
+    field(ZNAM, "NoInterlock")
+    field(ONAM, "Interlock")
+}
+record(bo, "$(PREFIX,undefined):BYPASS:VAC_COR_B8") {
+    field(DESC, "Bypass: VAC Coridor bit8")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:VAC_COR_SP.B8")
+    field(ZNAM, "NoInterlock")
+    field(ONAM, "Interlock")
+}
+record(bo, "$(PREFIX,undefined):BYPASS:VAC_COR_B9") {
+    field(DESC, "Bypass: VAC Coridor bit9")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:VAC_COR_SP.B9")
+    field(ZNAM, "NoInterlock")
+    field(ONAM, "Interlock")
+}
+record(bo, "$(PREFIX,undefined):BYPASS:VAC_COR_B10") {
+    field(DESC, "Bypass: VAC Coridor bit10")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:VAC_COR_SP.B10")
+    field(ZNAM, "NoInterlock")
+    field(ONAM, "Interlock")
+}
+record(bo, "$(PREFIX,undefined):BYPASS:VAC_COR_B11") {
+    field(DESC, "Bypass: VAC Coridor bit11")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:VAC_COR_SP.B11")
+    field(ZNAM, "NoInterlock")
+    field(ONAM, "Interlock")
+}
+record(bo, "$(PREFIX,undefined):BYPASS:VAC_COR_B12") {
+    field(DESC, "Bypass: VAC Coridor bit12")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:VAC_COR_SP.B12")
+    field(ZNAM, "NoInterlock")
+    field(ONAM, "Interlock")
+}
+record(bo, "$(PREFIX,undefined):BYPASS:VAC_COR_B13") {
+    field(DESC, "Bypass: VAC Coridor bit13")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:VAC_COR_SP.B13")
+    field(ZNAM, "NoInterlock")
+    field(ONAM, "Interlock")
+}
+record(bo, "$(PREFIX,undefined):BYPASS:VAC_COR_B14") {
+    field(DESC, "Bypass: VAC Coridor bit14")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:VAC_COR_SP.B14")
+    field(ZNAM, "NoInterlock")
+    field(ONAM, "Interlock")
+}
+record(bo, "$(PREFIX,undefined):BYPASS:VAC_COR_B15") {
+    field(DESC, "Bypass: VAC Coridor bit15")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:VAC_COR_SP.B15")
+    field(ZNAM, "NoInterlock")
+    field(ONAM, "Interlock")
+}
+
+record(bo, "$(PREFIX,undefined):BYPASS:VAC_COR_B16") {
+    field(DESC, "Bypass: VAC Coridor bit16")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:VAC_COR_SP.B16")
+    field(ZNAM, "NoInterlock")
+    field(ONAM, "Interlock")
+}
+
+record(bo, "$(PREFIX,undefined):BYPASS:VAC_COR_B17") {
+    field(DESC, "Bypass: VAC Coridor bit17")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:VAC_COR_SP.B17")
+    field(ZNAM, "NoInterlock")
+    field(ONAM, "Interlock")
+}
+
+record(bo, "$(PREFIX,undefined):BYPASS:VAC_COR_B18") {
+    field(DESC, "Bypass: VAC Coridor bit18")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:VAC_COR_SP.B18")
+    field(ZNAM, "NoInterlock")
+    field(ONAM, "Interlock")
+}
+
+record(bo, "$(PREFIX,undefined):BYPASS:VAC_COR_B19") {
+    field(DESC, "Bypass: VAC Coridor bit19")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:VAC_COR_SP.B19")
+    field(ZNAM, "NoInterlock")
+    field(ONAM, "Interlock")
+}
+
+record(bo, "$(PREFIX,undefined):BYPASS:VAC_COR_B20") {
+    field(DESC, "Bypass: VAC Coridor bit20")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:VAC_COR_SP.B20")
+    field(ZNAM, "NoInterlock")
+    field(ONAM, "Interlock")
+}
+
+record(bo, "$(PREFIX,undefined):BYPASS:VAC_COR_B21") {
+    field(DESC, "Bypass: VAC Coridor bit21")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:VAC_COR_SP.B21")
+    field(ZNAM, "NoInterlock")
+    field(ONAM, "Interlock")
+}
+
+record(bo, "$(PREFIX,undefined):BYPASS:VAC_COR_B22") {
+    field(DESC, "Bypass: VAC Coridor bit22")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:VAC_COR_SP.B22")
+    field(ZNAM, "NoInterlock")
+    field(ONAM, "Interlock")
+}
+
+record(bo, "$(PREFIX,undefined):BYPASS:VAC_COR_B23") {
+    field(DESC, "Bypass: VAC Coridor bit23")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:VAC_COR_SP.B23")
+    field(ZNAM, "NoInterlock")
+    field(ONAM, "Interlock")
+}
+
+record(bo, "$(PREFIX,undefined):BYPASS:VAC_COR_B24") {
+    field(DESC, "Bypass: VAC Coridor bit24")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:VAC_COR_SP.B24")
+    field(ZNAM, "NoInterlock")
+    field(ONAM, "Interlock")
+}
+
+record(bo, "$(PREFIX,undefined):BYPASS:VAC_COR_B25") {
+    field(DESC, "Bypass: VAC Coridor bit25")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:VAC_COR_SP.B25")
+    field(ZNAM, "NoInterlock")
+    field(ONAM, "Interlock")
+}
+
+record(bo, "$(PREFIX,undefined):BYPASS:VAC_COR_B26") {
+    field(DESC, "Bypass: VAC Coridor bit26")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:VAC_COR_SP.B26")
+    field(ZNAM, "NoInterlock")
+    field(ONAM, "Interlock")
+}
+
+record(bo, "$(PREFIX,undefined):BYPASS:VAC_COR_B27") {
+    field(DESC, "Bypass: VAC Coridor bit27")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:VAC_COR_SP.B27")
+    field(ZNAM, "NoInterlock")
+    field(ONAM, "Interlock")
+}
+
+record(bo, "$(PREFIX,undefined):BYPASS:VAC_COR_B28") {
+    field(DESC, "Bypass: VAC Coridor bit28")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:VAC_COR_SP.B28")
+    field(ZNAM, "NoInterlock")
+    field(ONAM, "Interlock")
+}
+
+record(bo, "$(PREFIX,undefined):BYPASS:VAC_COR_B29") {
+    field(DESC, "Bypass: VAC Coridor bit29")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:VAC_COR_SP.B29")
+    field(ZNAM, "NoInterlock")
+    field(ONAM, "Interlock")
+}
+
+record(bo, "$(PREFIX,undefined):BYPASS:VAC_COR_B30") {
+    field(DESC, "Bypass: VAC Coridor bit30")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:VAC_COR_SP.B30")
+    field(ZNAM, "NoInterlock")
+    field(ONAM, "Interlock")
+}
+
+record(bo, "$(PREFIX,undefined):BYPASS:VAC_COR_B31") {
+    field(DESC, "Bypass: VAC Coridor bit31")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:VAC_COR_SP.B31")
+    field(ZNAM, "NoInterlock")
+    field(ONAM, "Interlock")
+}
+
+
+
+record(mbboDirect,"$(PREFIX,undefined):BYPASS:VAC_RUF_SP") {
+    field(DESC, "Bypass: VAC Roof devices")
+    field(DTYP, "asynUInt32Digital")
+    field(OUT,  "@asynMask($(MPS_ASYNPORT,undefined)_BYPASS_VAC_RUF_SP 0 0xFFFF)")
+}
+record(bo, "$(PREFIX,undefined):BYPASS:VAC_RUF_B0") {
+    field(DESC, "Bypass VAC Roof bit0")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:VAC_RUF_SP.B0")
+    field(ZNAM, "NoInterlock")
+    field(ONAM, "Interlock")
+}
+record(bo, "$(PREFIX,undefined):BYPASS:VAC_RUF_B1") {
+    field(DESC, "Bypass VAC Roof bit1")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:VAC_RUF_SP.B1")
+    field(ZNAM, "NoInterlock")
+    field(ONAM, "Interlock")
+}
+record(bo, "$(PREFIX,undefined):BYPASS:VAC_RUF_B2") {
+    field(DESC, "Bypass VAC Roof bit2")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:VAC_RUF_SP.B2")
+    field(ZNAM, "NoInterlock")
+    field(ONAM, "Interlock")
+}
+record(bo, "$(PREFIX,undefined):BYPASS:VAC_RUF_B3") {
+    field(DESC, "Bypass VAC Roof bit3")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:VAC_RUF_SP.B3")
+    field(ZNAM, "NoInterlock")
+    field(ONAM, "Interlock")
+}
+record(bo, "$(PREFIX,undefined):BYPASS:VAC_RUF_B4") {
+    field(DESC, "Bypass VAC Roof bit4")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:VAC_RUF_SP.B4")
+    field(ZNAM, "NoInterlock")
+    field(ONAM, "Interlock")
+}
+record(bo, "$(PREFIX,undefined):BYPASS:VAC_RUF_B5") {
+    field(DESC, "Bypass VAC Roof bit5")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:VAC_RUF_SP.B5")
+    field(ZNAM, "NoInterlock")
+    field(ONAM, "Interlock")
+}
+record(bo, "$(PREFIX,undefined):BYPASS:VAC_RUF_B6") {
+    field(DESC, "Bypass VAC Roof bit6")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:VAC_RUF_SP.B6")
+    field(ZNAM, "NoInterlock")
+    field(ONAM, "Interlock")
+}
+record(bo, "$(PREFIX,undefined):BYPASS:VAC_RUF_B7") {
+    field(DESC, "Bypass VAC Roof bit7")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:VAC_RUF_SP.B7")
+    field(ZNAM, "NoInterlock")
+    field(ONAM, "Interlock")
+}
+record(bo, "$(PREFIX,undefined):BYPASS:VAC_RUF_B8") {
+    field(DESC, "Bypass VAC Roof bit8")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:VAC_RUF_SP.B8")
+    field(ZNAM, "NoInterlock")
+    field(ONAM, "Interlock")
+}
+record(bo, "$(PREFIX,undefined):BYPASS:VAC_RUF_B9") {
+    field(DESC, "Bypass VAC Roof bit9")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:VAC_RUF_SP.B9")
+    field(ZNAM, "NoInterlock")
+    field(ONAM, "Interlock")
+}
+record(bo, "$(PREFIX,undefined):BYPASS:VAC_RUF_B10") {
+    field(DESC, "Bypass VAC Roof bit10")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:VAC_RUF_SP.B10")
+    field(ZNAM, "NoInterlock")
+    field(ONAM, "Interlock")
+}
+record(bo, "$(PREFIX,undefined):BYPASS:VAC_RUF_B11") {
+    field(DESC, "Bypass VAC Roof bit11")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:VAC_RUF_SP.B11")
+    field(ZNAM, "NoInterlock")
+    field(ONAM, "Interlock")
+}
+record(bo, "$(PREFIX,undefined):BYPASS:VAC_RUF_B12") {
+    field(DESC, "Bypass VAC Roof bit12")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:VAC_RUF_SP.B12")
+    field(ZNAM, "NoInterlock")
+    field(ONAM, "Interlock")
+}
+record(bo, "$(PREFIX,undefined):BYPASS:VAC_RUF_B13") {
+    field(DESC, "Bypass VAC Roof bit13")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:VAC_RUF_SP.B13")
+    field(ZNAM, "NoInterlock")
+    field(ONAM, "Interlock")
+}
+record(bo, "$(PREFIX,undefined):BYPASS:VAC_RUF_B14") {
+    field(DESC, "Bypass VAC Roof bit14")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:VAC_RUF_SP.B14")
+    field(ZNAM, "NoInterlock")
+    field(ONAM, "Interlock")
+}
+record(bo, "$(PREFIX,undefined):BYPASS:VAC_RUF_B15") {
+    field(DESC, "Bypass VAC Roof bit15")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:VAC_RUF_SP.B15")
+    field(ZNAM, "NoInterlock")
+    field(ONAM, "Interlock")
+}
+record(bo, "$(PREFIX,undefined):BYPASS:VAC_RUF_B16") {
+    field(DESC, "Bypass VAC Roof bit16")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:VAC_RUF_SP.B16")
+    field(ZNAM, "NoInterlock")
+    field(ONAM, "Interlock")
+}
+record(bo, "$(PREFIX,undefined):BYPASS:VAC_RUF_B17") {
+    field(DESC, "Bypass VAC Roof bit17")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:VAC_RUF_SP.B17")
+    field(ZNAM, "NoInterlock")
+    field(ONAM, "Interlock")
+}
+record(bo, "$(PREFIX,undefined):BYPASS:VAC_RUF_B18") {
+    field(DESC, "Bypass VAC Roof bit18")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:VAC_RUF_SP.B18")
+    field(ZNAM, "NoInterlock")
+    field(ONAM, "Interlock")
+}
+record(bo, "$(PREFIX,undefined):BYPASS:VAC_RUF_B19") {
+    field(DESC, "Bypass VAC Roof bit19")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:VAC_RUF_SP.B19")
+    field(ZNAM, "NoInterlock")
+    field(ONAM, "Interlock")
+}
+record(bo, "$(PREFIX,undefined):BYPASS:VAC_RUF_B20") {
+    field(DESC, "Bypass VAC Roof bit20")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:VAC_RUF_SP.B20")
+    field(ZNAM, "NoInterlock")
+    field(ONAM, "Interlock")
+}
+record(bo, "$(PREFIX,undefined):BYPASS:VAC_RUF_B21") {
+    field(DESC, "Bypass VAC Roof bit21")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:VAC_RUF_SP.B21")
+    field(ZNAM, "NoInterlock")
+    field(ONAM, "Interlock")
+}
+record(bo, "$(PREFIX,undefined):BYPASS:VAC_RUF_B22") {
+    field(DESC, "Bypass VAC Roof bit22")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:VAC_RUF_SP.B22")
+    field(ZNAM, "NoInterlock")
+    field(ONAM, "Interlock")
+}
+record(bo, "$(PREFIX,undefined):BYPASS:VAC_RUF_B23") {
+    field(DESC, "Bypass VAC Roof bit23")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:VAC_RUF_SP.B23")
+    field(ZNAM, "NoInterlock")
+    field(ONAM, "Interlock")
+}
+record(bo, "$(PREFIX,undefined):BYPASS:VAC_RUF_B24") {
+    field(DESC, "Bypass VAC Roof bit24")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:VAC_RUF_SP.B24")
+    field(ZNAM, "NoInterlock")
+    field(ONAM, "Interlock")
+}
+record(bo, "$(PREFIX,undefined):BYPASS:VAC_RUF_B25") {
+    field(DESC, "Bypass VAC Roof bit25")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:VAC_RUF_SP.B25")
+    field(ZNAM, "NoInterlock")
+    field(ONAM, "Interlock")
+}
+
+record(bo, "$(PREFIX,undefined):BYPASS:VAC_RUF_B26") {
+    field(DESC, "Bypass VAC Roof bit26")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:VAC_RUF_SP.B26")
+    field(ZNAM, "NoInterlock")
+    field(ONAM, "Interlock")
+}
+
+record(bo, "$(PREFIX,undefined):BYPASS:VAC_RUF_B27") {
+    field(DESC, "Bypass VAC Roof bit27")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:VAC_RUF_SP.B27")
+    field(ZNAM, "NoInterlock")
+    field(ONAM, "Interlock")
+}
+
+record(bo, "$(PREFIX,undefined):BYPASS:VAC_RUF_B28") {
+    field(DESC, "Bypass VAC Roof bit28")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:VAC_RUF_SP.B28")
+    field(ZNAM, "NoInterlock")
+    field(ONAM, "Interlock")
+}
+
+record(bo, "$(PREFIX,undefined):BYPASS:VAC_RUF_B29") {
+    field(DESC, "Bypass VAC Roof bit29")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:VAC_RUF_SP.B29")
+    field(ZNAM, "NoInterlock")
+    field(ONAM, "Interlock")
+}
+
+record(bo, "$(PREFIX,undefined):BYPASS:VAC_RUF_B30") {
+    field(DESC, "Bypass VAC Roof bit30")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:VAC_RUF_SP.B30")
+    field(ZNAM, "NoInterlock")
+    field(ONAM, "Interlock")
+}
+
+record(bo, "$(PREFIX,undefined):BYPASS:VAC_RUF_B31") {
+    field(DESC, "Bypass VAC Roof bit31")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:VAC_RUF_SP.B31")
+    field(ZNAM, "NoInterlock")
+    field(ONAM, "Interlock")
+}
+
+
+record(mbboDirect,"$(PREFIX,undefined):BYPASS:LLRF_SP") {
+    field(DESC, "Bypass: LLRF devices")
+    field(DTYP, "asynUInt32Digital")
+    field(OUT,  "@asynMask($(MPS_ASYNPORT,undefined)_BYPASS_LLRF_SP 0 0xFFFF)")
+}
+record(bo, "$(PREFIX,undefined):BYPASS:LLRF:0") {
+    field(DESC, "Bypass LLRF 0")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:LLRF_SP.B0")
+    field(ZNAM, "NoInterlock")
+    field(ONAM, "Interlock")
+}
+
+record(bo, "$(PREFIX,undefined):BYPASS:LLRF:1") {
+    field(DESC, "Bypass LLRF 1")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:LLRF_SP.B1")
+    field(ZNAM, "NoInterlock")
+    field(ONAM, "Interlock")
+}
+
+record(bo, "$(PREFIX,undefined):BYPASS:LLRF:2") {
+    field(DESC, "Bypass LLRF 2")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:LLRF_SP.B2")
+    field(ZNAM, "NoInterlock")
+    field(ONAM, "Interlock")
+}
+
+record(bo, "$(PREFIX,undefined):BYPASS:LLRF:3") {
+    field(DESC, "Bypass LLRF 3")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:LLRF_SP.B3")
+    field(ZNAM, "NoInterlock")
+    field(ONAM, "Interlock")
+}
+
+
+
+record(mbboDirect,"$(PREFIX,undefined):BYPASS:MOD_SP") {
+    field(DESC, "Bypass: Modulator devices")
+    field(DTYP, "asynUInt32Digital")
+    field(OUT,  "@asynMask($(MPS_ASYNPORT,undefined)_BYPASS_MOD_SP 0 0xFFFF)")
+}
+record(bo, "$(PREFIX,undefined):BYPASS:MOD:0") {
+    field(DESC, "Bypass MOD 0")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:MOD_SP.B0")
+    field(ZNAM, "NoInterlock")
+    field(ONAM, "Interlock")
+}
+
+record(bo, "$(PREFIX,undefined):BYPASS:MOD:1") {
+    field(DESC, "Bypass MOD 1")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:MOD_SP.B1")
+    field(ZNAM, "NoInterlock")
+    field(ONAM, "Interlock")
+}
+
+record(bo, "$(PREFIX,undefined):BYPASS:MOD:2") {
+    field(DESC, "Bypass MOD 2")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:MOD_SP.B2")
+    field(ZNAM, "NoInterlock")
+    field(ONAM, "Interlock")
+}
+
+record(bo, "$(PREFIX,undefined):BYPASS:MOD:3") {
+    field(DESC, "Bypass MOD 3")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:MOD_SP.B3")
+    field(ZNAM, "NoInterlock")
+    field(ONAM, "Interlock")
+}
+
+
+record(mbbiDirect,"$(PREFIX,undefined):ILK:VAC_COR") {
+    field(DESC, "VAC Coridor ilks word")
+    field(DTYP, "asynUInt32Digital")
+    field(INP,  "@asynMask($(MPS_ASYNPORT,undefined)_VAC_COR_RB 0 0xFFFF)")
+    field(SCAN, "I/O Intr")
+}
+record(mbbiDirect,"$(PREFIX,undefined):ILK:VAC_RUF") {
+    field(DESC, "VAC Roof ilks word")
+    field(DTYP, "asynUInt32Digital")
+    field(INP,  "@asynMask($(MPS_ASYNPORT,undefined)_VAC_RUF_RB 0 0xFFFF)")
+    field(SCAN, "I/O Intr")
+}
+record(mbbiDirect,"$(PREFIX,undefined):ILK:LLRF") {
+    field(DESC, "LLRF ilks word")
+    field(DTYP, "asynUInt32Digital")
+    field(INP,  "@asynMask($(MPS_ASYNPORT,undefined)_LLRF_RB 0 0xFFFF)")
+    field(SCAN, "I/O Intr")
+}
+record(mbbiDirect,"$(PREFIX,undefined):ILK:MOD") {
+    field(DESC, "Modulator ilks word")
+    field(DTYP, "asynUInt32Digital")
+    field(INP,  "@asynMask($(MPS_ASYNPORT,undefined)_MOD_RB 0 0xFFFF)")
+    field(SCAN, "I/O Intr")
+}
+
+
+
+

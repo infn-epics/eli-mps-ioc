@@ -1,0 +1,5 @@
+epicsEnvSet("IOC","iocssrip-mps")
+epicsEnvSet("TOP","/root/ssrip-mps")
+epicsEnvSet("ASYN","/root/ssrip-mps/modules/epicsmng/asyn-R4-44-2")
+epicsEnvSet("MODBUS","/root/ssrip-mps/modules/epicsmng/modbus-R3-2")
+epicsEnvSet("EPICS_BASE","/root/ssrip-mps/modules/epicsmng/base-R7.0.7")

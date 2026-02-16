@@ -1,0 +1,140 @@
+#
+# Project       : SSRIP MPS Device Support
+# Description   : EPICS device support for SSRIP for Machine Protection System
+# Authors       : Giulia Latini <Giulia Latini@lnf.infn.it>
+#
+
+record(ai, "$(PREFIX,undefined):BOOTUP") {
+    field(DESC, "BootUp Timestamp")
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(MPS_ASYNPORT,undefined)_BOOT_TIMESTAMP_RB 0)INT32_BE")
+    field(EGU,  "ERA")
+    field(PREC, "0")
+    field(SCAN, "I/O Intr")
+}
+
+record(ai, "$(PREFIX,undefined):BENCHMARK") {
+    field(DESC, "FSM Benachmark")
+    field(DTYP, "asynInt32")
+    field(INP,  "@asynMask($(MPS_ASYNPORT,undefined)_BENCHMARK_RB 0 0xFFFF)")
+    field(EGU,  "us")
+    field(HOPR, "0xFFFF")
+    field(LOPR, "0")
+    field(PREC, "0")
+    field(SCAN, "I/O Intr")
+}
+
+record(ai, "$(PREFIX,undefined):TEMP") {
+    field(DESC, "Device Temperature")
+    field(DTYP, "asynInt32")
+    field(INP,  "@asynMask($(MPS_ASYNPORT,undefined)_TEMP_RB 0 0xFFFF)")
+    field(EGU,  "°C")
+    field(HOPR, "0xFFFF")
+    field(LOPR, "0")
+    field(PREC, "0")
+    field(SCAN, "I/O Intr")
+}
+
+record(ai, "$(PREFIX,undefined):WATCHDOG") {
+    field(DESC, "FSM Watchdog")
+    field(DTYP, "asynInt32")
+    field(INP,  "@asyn($(MPS_ASYNPORT,undefined)_WATCHDOG_RB 0)INT32_BE")
+    field(EGU,  "ERA")
+    field(SCAN, "I/O Intr")
+}
+
+record(mbbi,"$(PREFIX,undefined):SLEEP") {
+    field(DESC, "Sleep-mode status")
+    field(DTYP, "asynInt32")
+    field(INP,  "@asynMask($(MPS_ASYNPORT,undefined)_SLEEP_RB 0 0xFFFF)")
+    field(SCAN, "I/O Intr")
+    field(ZRVL, "0")
+    field(ONVL, "1")
+    field(ZRST, "Running")
+    field(ONST, "Sleeping")
+}
+
+record(mbbo,"$(PREFIX,undefined):RESET") {
+    field(DESC, "Reset FSM")
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asynMask($(MPS_ASYNPORT,undefined)_RESET_SP 0 0xFFFF)")
+    field(ZRVL, "0")
+    field(ONVL, "1")
+    field(ZRST, "No Reset")
+    field(ONST, "Reset")
+}
+
+record(mbbo,"$(PREFIX,undefined):ACK_SP") {
+    field(DESC, "ACK")
+    field(DTYP, "asynInt32")
+    field(OUT,  "@asynMask($(MPS_ASYNPORT,undefined)_ACK_SP 0 0xFFFF)")
+    field(ZRVL, "0")
+    field(ONVL, "1")
+    field(ZRST, "Idle")
+    field(ONST, "Ack")
+}
+
+record(mbbiDirect,"$(PREFIX,undefined):ENABLE_RAW") {
+    field(DESC, "MPS Enable status")
+    field(DTYP, "asynUInt32Digital")
+    field(INP,  "@asynMask($(MPS_ASYNPORT,undefined)_ENABLE_RB 0 0xFFFF)")
+    field(SCAN, "I/O Intr")
+    field(FLNK, "$(PREFIX,undefined):ENABLE")
+}
+record(bi, "$(PREFIX,undefined):ENABLE") {
+    field(DESC, "MPS Enable")
+    field(INP,  "$(PREFIX,undefined):ENABLE_RAW.B0")
+    field(SCAN, "Passive")
+    field(ZNAM, "Disabled")
+    field(ONAM, "Enabled")
+}
+
+record(mbboDirect,"$(PREFIX,undefined):BYPASS:VAC_COR_SP") {
+    field(DESC, "Bypass: VAC Coridor devices")
+    field(DTYP, "asynUInt32Digital")
+    field(OUT,  "@asynMask($(MPS_ASYNPORT,undefined)_BYPASS_VAC_COR_SP 0 0xFFFF)")
+}
+record(mbboDirect,"$(PREFIX,undefined):BYPASS:VAC_RUF_SP") {
+    field(DESC, "Bypass: VAC Roof devices")
+    field(DTYP, "asynUInt32Digital")
+    field(OUT,  "@asynMask($(MPS_ASYNPORT,undefined)_BYPASS_VAC_RUF_SP 0 0xFFFF)")
+}
+record(mbboDirect,"$(PREFIX,undefined):BYPASS:LLRF_SP") {
+    field(DESC, "Bypass: LLRF devices")
+    field(DTYP, "asynUInt32Digital")
+    field(OUT,  "@asynMask($(MPS_ASYNPORT,undefined)_BYPASS_LLRF_SP 0 0xFFFF)")
+}
+record(mbboDirect,"$(PREFIX,undefined):BYPASS:MOD_SP") {
+    field(DESC, "Bypass: Modulator devices")
+    field(DTYP, "asynUInt32Digital")
+    field(OUT,  "@asynMask($(MPS_ASYNPORT,undefined)_BYPASS_MOD_SP 0 0xFFFF)")
+}
+
+record(mbbiDirect,"$(PREFIX,undefined):ILK:VAC_COR") {
+    field(DESC, "VAC Coridor ilks word")
+    field(DTYP, "asynUInt32Digital")
+    field(INP,  "@asynMask($(MPS_ASYNPORT,undefined)_VAC_COR_RB 0 0xFFFF)")
+    field(SCAN, "I/O Intr")
+}
+record(mbbiDirect,"$(PREFIX,undefined):ILK:VAC_RUF") {
+    field(DESC, "VAC Roof ilks word")
+    field(DTYP, "asynUInt32Digital")
+    field(INP,  "@asynMask($(MPS_ASYNPORT,undefined)_VAC_RUF_RB 0 0xFFFF)")
+    field(SCAN, "I/O Intr")
+}
+record(mbbiDirect,"$(PREFIX,undefined):ILK:LLRF") {
+    field(DESC, "LLRF ilks word")
+    field(DTYP, "asynUInt32Digital")
+    field(INP,  "@asynMask($(MPS_ASYNPORT,undefined)_LLRF_RB 0 0xFFFF)")
+    field(SCAN, "I/O Intr")
+}
+record(mbbiDirect,"$(PREFIX,undefined):ILK:MOD") {
+    field(DESC, "Modulator ilks word")
+    field(DTYP, "asynUInt32Digital")
+    field(INP,  "@asynMask($(MPS_ASYNPORT,undefined)_MOD_RB 0 0xFFFF)")
+    field(SCAN, "I/O Intr")
+}
+
+
+
+
