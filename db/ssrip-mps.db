@@ -94,6 +94,8 @@ record(mbboDirect,"$(PREFIX,undefined):BYPASS:VAC_COR_SP") {
     field(DTYP, "asynUInt32Digital")
     field(OUT,  "@asynMask($(MPS_ASYNPORT,undefined)_BYPASS_VAC_COR_SP 0 0xFFFF)")
 }
+
+
 record(mbboDirect,"$(PREFIX,undefined):BYPASS:VAC_RUF_SP") {
     field(DESC, "Bypass: VAC Roof devices")
     field(DTYP, "asynUInt32Digital")
