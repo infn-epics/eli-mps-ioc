@@ -587,25 +587,25 @@ record(bo, "$(PREFIX,undefined):BYPASS:MOD:3") {
 
 record(mbbiDirect,"$(PREFIX,undefined):ILK:VAC_COR") {
     field(DESC, "VAC Coridor ilks word")
-    field(DTYP, "asynUInt32Digital")
+    field(DTYP, "asynInt32")
     field(INP,  "@asynMask($(MPS_ASYNPORT,undefined)_VAC_COR_RB 0 0xFFFF)")
     field(SCAN, "I/O Intr")
 }
 record(mbbiDirect,"$(PREFIX,undefined):ILK:VAC_RUF") {
     field(DESC, "VAC Roof ilks word")
-    field(DTYP, "asynUInt32Digital")
+    field(DTYP, "asynInt32")
     field(INP,  "@asynMask($(MPS_ASYNPORT,undefined)_VAC_RUF_RB 0 0xFFFF)")
     field(SCAN, "I/O Intr")
 }
 record(mbbiDirect,"$(PREFIX,undefined):ILK:LLRF") {
     field(DESC, "LLRF ilks word")
-    field(DTYP, "asynUInt32Digital")
+    field(DTYP, "asynInt32")
     field(INP,  "@asynMask($(MPS_ASYNPORT,undefined)_LLRF_RB 0 0xFFFF)")
     field(SCAN, "I/O Intr")
 }
 record(mbbiDirect,"$(PREFIX,undefined):ILK:MOD") {
     field(DESC, "Modulator ilks word")
-    field(DTYP, "asynUInt32Digital")
+    field(DTYP, "asynInt32")
     field(INP,  "@asynMask($(MPS_ASYNPORT,undefined)_MOD_RB 0 0xFFFF)")
     field(SCAN, "I/O Intr")
 }
