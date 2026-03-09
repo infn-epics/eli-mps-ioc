@@ -1,0 +1,6 @@
+EPICS_BASE=/epics/epics-base
+ASYN=/epics/support/asyn
+STREAMDEVICE=/epics/support/StreamDevice
+CALC=/epics/support/calc
+AUTOSAVE=/epics/support/autosave
+MODBUS=/epics/support/modbus
