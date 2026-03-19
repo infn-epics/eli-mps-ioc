@@ -8,8 +8,11 @@
         "--net=host",
         // Make sure SELinux does not disable with access to host filesystems like tmp
         "--security-opt=label=disable",
-        "--platform=linux/amd64"
+        "--platform=linux/amd64",
+        "-p", "5064:5064/tcp",
+        "-p", "5064:5064/udp"
     ],
+    
     "remoteEnv": {
         // allows X11 apps to run inside the container
         "DISPLAY": "${localEnv:DISPLAY}",
@@ -43,8 +46,15 @@
     // to run in the container at creation in here
     //"postCreateCommand": "bash .devcontainer/postCreateCommand ${devcontainerId}",
     // forward ports to clients
-    "appPort": [5064,"5064:5064/udp","5065:5065/udp"],
- 
+    //"appPort": [5064,"5064:5064/udp","5065:5065/udp"],
+
+    "containerEnv": {
+    "EPICS_CA_SERVER_PORT": "5064",
+    "EPICS_CAS_INTF_ADDR_LIST": "0.0.0.0",
+    "EPICS_CA_ADDR_LIST": "0.0.0.0",
+    "EPICS_CA_AUTO_ADDR_LIST": "NO",
+    "EPICS_CAS_BEACON_ADDR_LIST": "127.0.0.1"
+  }
     
     "workspaceMount": "source=${localWorkspaceFolder},target=/app/${localWorkspaceFolderBasename},type=bind",
     "workspaceFolder": "/app/${localWorkspaceFolderBasename}",

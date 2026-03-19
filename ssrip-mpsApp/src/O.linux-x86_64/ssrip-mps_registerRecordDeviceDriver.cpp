@@ -363,7 +363,7 @@ static struct iocshVarDef vardefs[] = {
 int ssrip_mps_registerRecordDeviceDriver(DBBASE *pbase)
 {
     static int executed = 0;
-    const char *bldTop = "/root/ssrip-mps";
+    const char *bldTop = "/app/eli-mps-ioc";
     const char *envTop = getenv("TOP");
 
     if (envTop && strcmp(envTop, bldTop)) {

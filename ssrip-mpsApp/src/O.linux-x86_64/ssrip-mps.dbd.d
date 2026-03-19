@@ -1,152 +1,152 @@
-../O.Common/ssrip-mps.dbd: ../../../modules/epicsmng/base-R7.0.7/dbd/base.dbd \
-    ../../../modules/epicsmng/base-R7.0.7/dbd/menuGlobal.dbd \
-    ../../../modules/epicsmng/base-R7.0.7/dbd/menuAlarmSevr.dbd \
-    ../../../modules/epicsmng/base-R7.0.7/dbd/menuAlarmStat.dbd \
-    ../../../modules/epicsmng/base-R7.0.7/dbd/menuFtype.dbd \
-    ../../../modules/epicsmng/base-R7.0.7/dbd/menuIvoa.dbd \
-    ../../../modules/epicsmng/base-R7.0.7/dbd/menuOmsl.dbd \
-    ../../../modules/epicsmng/base-R7.0.7/dbd/menuPini.dbd \
-    ../../../modules/epicsmng/base-R7.0.7/dbd/menuPost.dbd \
-    ../../../modules/epicsmng/base-R7.0.7/dbd/menuPriority.dbd \
-    ../../../modules/epicsmng/base-R7.0.7/dbd/menuYesNo.dbd \
-    ../../../modules/epicsmng/base-R7.0.7/dbd/menuSimm.dbd \
-    ../../../modules/epicsmng/base-R7.0.7/dbd/menuConvert.dbd \
-    ../../../modules/epicsmng/base-R7.0.7/dbd/menuScan.dbd \
-    ../../../modules/epicsmng/base-R7.0.7/dbd/stdRecords.dbd \
-    ../../../modules/epicsmng/base-R7.0.7/dbd/aaiRecord.dbd \
-    ../../../modules/epicsmng/base-R7.0.7/dbd/dbCommon.dbd \
-    ../../../modules/epicsmng/base-R7.0.7/dbd/aaoRecord.dbd \
-    ../../../modules/epicsmng/base-R7.0.7/dbd/aiRecord.dbd \
-    ../../../modules/epicsmng/base-R7.0.7/dbd/aoRecord.dbd \
-    ../../../modules/epicsmng/base-R7.0.7/dbd/aSubRecord.dbd \
-    ../../../modules/epicsmng/base-R7.0.7/dbd/biRecord.dbd \
-    ../../../modules/epicsmng/base-R7.0.7/dbd/boRecord.dbd \
-    ../../../modules/epicsmng/base-R7.0.7/dbd/calcRecord.dbd \
-    ../../../modules/epicsmng/base-R7.0.7/dbd/calcoutRecord.dbd \
-    ../../../modules/epicsmng/base-R7.0.7/dbd/compressRecord.dbd \
-    ../../../modules/epicsmng/base-R7.0.7/dbd/dfanoutRecord.dbd \
-    ../../../modules/epicsmng/base-R7.0.7/dbd/eventRecord.dbd \
-    ../../../modules/epicsmng/base-R7.0.7/dbd/fanoutRecord.dbd \
-    ../../../modules/epicsmng/base-R7.0.7/dbd/histogramRecord.dbd \
-    ../../../modules/epicsmng/base-R7.0.7/dbd/int64inRecord.dbd \
-    ../../../modules/epicsmng/base-R7.0.7/dbd/int64outRecord.dbd \
-    ../../../modules/epicsmng/base-R7.0.7/dbd/longinRecord.dbd \
-    ../../../modules/epicsmng/base-R7.0.7/dbd/longoutRecord.dbd \
-    ../../../modules/epicsmng/base-R7.0.7/dbd/lsiRecord.dbd \
-    ../../../modules/epicsmng/base-R7.0.7/dbd/lsoRecord.dbd \
-    ../../../modules/epicsmng/base-R7.0.7/dbd/mbbiRecord.dbd \
-    ../../../modules/epicsmng/base-R7.0.7/dbd/mbbiDirectRecord.dbd \
-    ../../../modules/epicsmng/base-R7.0.7/dbd/mbboRecord.dbd \
-    ../../../modules/epicsmng/base-R7.0.7/dbd/mbboDirectRecord.dbd \
-    ../../../modules/epicsmng/base-R7.0.7/dbd/permissiveRecord.dbd \
-    ../../../modules/epicsmng/base-R7.0.7/dbd/printfRecord.dbd \
-    ../../../modules/epicsmng/base-R7.0.7/dbd/selRecord.dbd \
-    ../../../modules/epicsmng/base-R7.0.7/dbd/seqRecord.dbd \
-    ../../../modules/epicsmng/base-R7.0.7/dbd/stateRecord.dbd \
-    ../../../modules/epicsmng/base-R7.0.7/dbd/stringinRecord.dbd \
-    ../../../modules/epicsmng/base-R7.0.7/dbd/stringoutRecord.dbd \
-    ../../../modules/epicsmng/base-R7.0.7/dbd/subRecord.dbd \
-    ../../../modules/epicsmng/base-R7.0.7/dbd/subArrayRecord.dbd \
-    ../../../modules/epicsmng/base-R7.0.7/dbd/waveformRecord.dbd \
-    ../../../modules/epicsmng/base-R7.0.7/dbd/filters.dbd \
-    ../../../modules/epicsmng/base-R7.0.7/dbd/links.dbd \
-    ../../../modules/epicsmng/base-R7.0.7/dbd/devSoft.dbd \
-    ../../../modules/epicsmng/base-R7.0.7/dbd/asSub.dbd \
-    ../../../modules/epicsmng/base-R7.0.7/dbd/dbCore.dbd \
-    ../../../modules/epicsmng/base-R7.0.7/dbd/rsrv.dbd \
-    ../../../modules/epicsmng/asyn-R4-44-2/dbd/asyn.dbd \
-    ../../../modules/epicsmng/asyn-R4-44-2/dbd/asynRecord.dbd \
-    ../../../modules/epicsmng/asyn-R4-44-2/dbd/devEpics.dbd \
-    ../../../modules/epicsmng/asyn-R4-44-2/dbd/devAsynOctet.dbd \
-    ../../../modules/epicsmng/asyn-R4-44-2/dbd/devAsynInt32.dbd \
-    ../../../modules/epicsmng/asyn-R4-44-2/dbd/devAsynXXXArray.dbd \
-    ../../../modules/epicsmng/asyn-R4-44-2/dbd/devAsynInt32TimeSeries.dbd \
-    ../../../modules/epicsmng/asyn-R4-44-2/dbd/devAsynUInt32Digital.dbd \
-    ../../../modules/epicsmng/asyn-R4-44-2/dbd/devAsynFloat64.dbd \
-    ../../../modules/epicsmng/asyn-R4-44-2/dbd/devAsynFloat64TimeSeries.dbd \
-    ../../../modules/epicsmng/asyn-R4-44-2/dbd/devAsynRecord.dbd \
-    ../../../modules/epicsmng/asyn-R4-44-2/dbd/devAsynOctetLs.dbd \
-    ../../../modules/epicsmng/asyn-R4-44-2/dbd/devAsynInt64.dbd \
-    ../../../modules/epicsmng/asyn-R4-44-2/dbd/devAsynInt64Array.dbd \
-    ../../../modules/epicsmng/asyn-R4-44-2/dbd/devAsynInt64TimeSeries.dbd \
-    ../../../modules/epicsmng/asyn-R4-44-2/dbd/devAsynInt64Misc.dbd \
-    ../../../modules/epicsmng/asyn-R4-44-2/dbd/drvAsynIPPort.dbd \
-    ../../../modules/epicsmng/asyn-R4-44-2/dbd/drvAsynSerialPort.dbd \
-    ../../../modules/epicsmng/modbus-R3-2/dbd/modbusSupport.dbd
+../O.Common/ssrip-mps.dbd: /epics/epics-base/dbd/base.dbd \
+    /epics/epics-base/dbd/menuGlobal.dbd \
+    /epics/epics-base/dbd/menuAlarmSevr.dbd \
+    /epics/epics-base/dbd/menuAlarmStat.dbd \
+    /epics/epics-base/dbd/menuFtype.dbd \
+    /epics/epics-base/dbd/menuIvoa.dbd \
+    /epics/epics-base/dbd/menuOmsl.dbd \
+    /epics/epics-base/dbd/menuPini.dbd \
+    /epics/epics-base/dbd/menuPost.dbd \
+    /epics/epics-base/dbd/menuPriority.dbd \
+    /epics/epics-base/dbd/menuYesNo.dbd \
+    /epics/epics-base/dbd/menuSimm.dbd \
+    /epics/epics-base/dbd/menuConvert.dbd \
+    /epics/epics-base/dbd/menuScan.dbd \
+    /epics/epics-base/dbd/stdRecords.dbd \
+    /epics/epics-base/dbd/aaiRecord.dbd \
+    /epics/epics-base/dbd/dbCommon.dbd \
+    /epics/epics-base/dbd/aaoRecord.dbd \
+    /epics/epics-base/dbd/aiRecord.dbd \
+    /epics/epics-base/dbd/aoRecord.dbd \
+    /epics/epics-base/dbd/aSubRecord.dbd \
+    /epics/epics-base/dbd/biRecord.dbd \
+    /epics/epics-base/dbd/boRecord.dbd \
+    /epics/epics-base/dbd/calcRecord.dbd \
+    /epics/epics-base/dbd/calcoutRecord.dbd \
+    /epics/epics-base/dbd/compressRecord.dbd \
+    /epics/epics-base/dbd/dfanoutRecord.dbd \
+    /epics/epics-base/dbd/eventRecord.dbd \
+    /epics/epics-base/dbd/fanoutRecord.dbd \
+    /epics/epics-base/dbd/histogramRecord.dbd \
+    /epics/epics-base/dbd/int64inRecord.dbd \
+    /epics/epics-base/dbd/int64outRecord.dbd \
+    /epics/epics-base/dbd/longinRecord.dbd \
+    /epics/epics-base/dbd/longoutRecord.dbd \
+    /epics/epics-base/dbd/lsiRecord.dbd \
+    /epics/epics-base/dbd/lsoRecord.dbd \
+    /epics/epics-base/dbd/mbbiRecord.dbd \
+    /epics/epics-base/dbd/mbbiDirectRecord.dbd \
+    /epics/epics-base/dbd/mbboRecord.dbd \
+    /epics/epics-base/dbd/mbboDirectRecord.dbd \
+    /epics/epics-base/dbd/permissiveRecord.dbd \
+    /epics/epics-base/dbd/printfRecord.dbd \
+    /epics/epics-base/dbd/selRecord.dbd \
+    /epics/epics-base/dbd/seqRecord.dbd \
+    /epics/epics-base/dbd/stateRecord.dbd \
+    /epics/epics-base/dbd/stringinRecord.dbd \
+    /epics/epics-base/dbd/stringoutRecord.dbd \
+    /epics/epics-base/dbd/subRecord.dbd \
+    /epics/epics-base/dbd/subArrayRecord.dbd \
+    /epics/epics-base/dbd/waveformRecord.dbd \
+    /epics/epics-base/dbd/filters.dbd \
+    /epics/epics-base/dbd/links.dbd \
+    /epics/epics-base/dbd/devSoft.dbd \
+    /epics/epics-base/dbd/asSub.dbd \
+    /epics/epics-base/dbd/dbCore.dbd \
+    /epics/epics-base/dbd/rsrv.dbd \
+    /epics/support/asyn/dbd/asyn.dbd \
+    /epics/support/asyn/dbd/asynRecord.dbd \
+    /epics/support/asyn/dbd/devEpics.dbd \
+    /epics/support/asyn/dbd/devAsynOctet.dbd \
+    /epics/support/asyn/dbd/devAsynInt32.dbd \
+    /epics/support/asyn/dbd/devAsynXXXArray.dbd \
+    /epics/support/asyn/dbd/devAsynInt32TimeSeries.dbd \
+    /epics/support/asyn/dbd/devAsynUInt32Digital.dbd \
+    /epics/support/asyn/dbd/devAsynFloat64.dbd \
+    /epics/support/asyn/dbd/devAsynFloat64TimeSeries.dbd \
+    /epics/support/asyn/dbd/devAsynRecord.dbd \
+    /epics/support/asyn/dbd/devAsynOctetLs.dbd \
+    /epics/support/asyn/dbd/devAsynInt64.dbd \
+    /epics/support/asyn/dbd/devAsynInt64Array.dbd \
+    /epics/support/asyn/dbd/devAsynInt64TimeSeries.dbd \
+    /epics/support/asyn/dbd/devAsynInt64Misc.dbd \
+    /epics/support/asyn/dbd/drvAsynIPPort.dbd \
+    /epics/support/asyn/dbd/drvAsynSerialPort.dbd \
+    /epics/support/modbus/dbd/modbusSupport.dbd
 
-../../../modules/epicsmng/base-R7.0.7/dbd/base.dbd:
-../../../modules/epicsmng/base-R7.0.7/dbd/menuGlobal.dbd:
-../../../modules/epicsmng/base-R7.0.7/dbd/menuAlarmSevr.dbd:
-../../../modules/epicsmng/base-R7.0.7/dbd/menuAlarmStat.dbd:
-../../../modules/epicsmng/base-R7.0.7/dbd/menuFtype.dbd:
-../../../modules/epicsmng/base-R7.0.7/dbd/menuIvoa.dbd:
-../../../modules/epicsmng/base-R7.0.7/dbd/menuOmsl.dbd:
-../../../modules/epicsmng/base-R7.0.7/dbd/menuPini.dbd:
-../../../modules/epicsmng/base-R7.0.7/dbd/menuPost.dbd:
-../../../modules/epicsmng/base-R7.0.7/dbd/menuPriority.dbd:
-../../../modules/epicsmng/base-R7.0.7/dbd/menuYesNo.dbd:
-../../../modules/epicsmng/base-R7.0.7/dbd/menuSimm.dbd:
-../../../modules/epicsmng/base-R7.0.7/dbd/menuConvert.dbd:
-../../../modules/epicsmng/base-R7.0.7/dbd/menuScan.dbd:
-../../../modules/epicsmng/base-R7.0.7/dbd/stdRecords.dbd:
-../../../modules/epicsmng/base-R7.0.7/dbd/aaiRecord.dbd:
-../../../modules/epicsmng/base-R7.0.7/dbd/dbCommon.dbd:
-../../../modules/epicsmng/base-R7.0.7/dbd/aaoRecord.dbd:
-../../../modules/epicsmng/base-R7.0.7/dbd/aiRecord.dbd:
-../../../modules/epicsmng/base-R7.0.7/dbd/aoRecord.dbd:
-../../../modules/epicsmng/base-R7.0.7/dbd/aSubRecord.dbd:
-../../../modules/epicsmng/base-R7.0.7/dbd/biRecord.dbd:
-../../../modules/epicsmng/base-R7.0.7/dbd/boRecord.dbd:
-../../../modules/epicsmng/base-R7.0.7/dbd/calcRecord.dbd:
-../../../modules/epicsmng/base-R7.0.7/dbd/calcoutRecord.dbd:
-../../../modules/epicsmng/base-R7.0.7/dbd/compressRecord.dbd:
-../../../modules/epicsmng/base-R7.0.7/dbd/dfanoutRecord.dbd:
-../../../modules/epicsmng/base-R7.0.7/dbd/eventRecord.dbd:
-../../../modules/epicsmng/base-R7.0.7/dbd/fanoutRecord.dbd:
-../../../modules/epicsmng/base-R7.0.7/dbd/histogramRecord.dbd:
-../../../modules/epicsmng/base-R7.0.7/dbd/int64inRecord.dbd:
-../../../modules/epicsmng/base-R7.0.7/dbd/int64outRecord.dbd:
-../../../modules/epicsmng/base-R7.0.7/dbd/longinRecord.dbd:
-../../../modules/epicsmng/base-R7.0.7/dbd/longoutRecord.dbd:
-../../../modules/epicsmng/base-R7.0.7/dbd/lsiRecord.dbd:
-../../../modules/epicsmng/base-R7.0.7/dbd/lsoRecord.dbd:
-../../../modules/epicsmng/base-R7.0.7/dbd/mbbiRecord.dbd:
-../../../modules/epicsmng/base-R7.0.7/dbd/mbbiDirectRecord.dbd:
-../../../modules/epicsmng/base-R7.0.7/dbd/mbboRecord.dbd:
-../../../modules/epicsmng/base-R7.0.7/dbd/mbboDirectRecord.dbd:
-../../../modules/epicsmng/base-R7.0.7/dbd/permissiveRecord.dbd:
-../../../modules/epicsmng/base-R7.0.7/dbd/printfRecord.dbd:
-../../../modules/epicsmng/base-R7.0.7/dbd/selRecord.dbd:
-../../../modules/epicsmng/base-R7.0.7/dbd/seqRecord.dbd:
-../../../modules/epicsmng/base-R7.0.7/dbd/stateRecord.dbd:
-../../../modules/epicsmng/base-R7.0.7/dbd/stringinRecord.dbd:
-../../../modules/epicsmng/base-R7.0.7/dbd/stringoutRecord.dbd:
-../../../modules/epicsmng/base-R7.0.7/dbd/subRecord.dbd:
-../../../modules/epicsmng/base-R7.0.7/dbd/subArrayRecord.dbd:
-../../../modules/epicsmng/base-R7.0.7/dbd/waveformRecord.dbd:
-../../../modules/epicsmng/base-R7.0.7/dbd/filters.dbd:
-../../../modules/epicsmng/base-R7.0.7/dbd/links.dbd:
-../../../modules/epicsmng/base-R7.0.7/dbd/devSoft.dbd:
-../../../modules/epicsmng/base-R7.0.7/dbd/asSub.dbd:
-../../../modules/epicsmng/base-R7.0.7/dbd/dbCore.dbd:
-../../../modules/epicsmng/base-R7.0.7/dbd/rsrv.dbd:
-../../../modules/epicsmng/asyn-R4-44-2/dbd/asyn.dbd:
-../../../modules/epicsmng/asyn-R4-44-2/dbd/asynRecord.dbd:
-../../../modules/epicsmng/asyn-R4-44-2/dbd/devEpics.dbd:
-../../../modules/epicsmng/asyn-R4-44-2/dbd/devAsynOctet.dbd:
-../../../modules/epicsmng/asyn-R4-44-2/dbd/devAsynInt32.dbd:
-../../../modules/epicsmng/asyn-R4-44-2/dbd/devAsynXXXArray.dbd:
-../../../modules/epicsmng/asyn-R4-44-2/dbd/devAsynInt32TimeSeries.dbd:
-../../../modules/epicsmng/asyn-R4-44-2/dbd/devAsynUInt32Digital.dbd:
-../../../modules/epicsmng/asyn-R4-44-2/dbd/devAsynFloat64.dbd:
-../../../modules/epicsmng/asyn-R4-44-2/dbd/devAsynFloat64TimeSeries.dbd:
-../../../modules/epicsmng/asyn-R4-44-2/dbd/devAsynRecord.dbd:
-../../../modules/epicsmng/asyn-R4-44-2/dbd/devAsynOctetLs.dbd:
-../../../modules/epicsmng/asyn-R4-44-2/dbd/devAsynInt64.dbd:
-../../../modules/epicsmng/asyn-R4-44-2/dbd/devAsynInt64Array.dbd:
-../../../modules/epicsmng/asyn-R4-44-2/dbd/devAsynInt64TimeSeries.dbd:
-../../../modules/epicsmng/asyn-R4-44-2/dbd/devAsynInt64Misc.dbd:
-../../../modules/epicsmng/asyn-R4-44-2/dbd/drvAsynIPPort.dbd:
-../../../modules/epicsmng/asyn-R4-44-2/dbd/drvAsynSerialPort.dbd:
-../../../modules/epicsmng/modbus-R3-2/dbd/modbusSupport.dbd:
+/epics/epics-base/dbd/base.dbd:
+/epics/epics-base/dbd/menuGlobal.dbd:
+/epics/epics-base/dbd/menuAlarmSevr.dbd:
+/epics/epics-base/dbd/menuAlarmStat.dbd:
+/epics/epics-base/dbd/menuFtype.dbd:
+/epics/epics-base/dbd/menuIvoa.dbd:
+/epics/epics-base/dbd/menuOmsl.dbd:
+/epics/epics-base/dbd/menuPini.dbd:
+/epics/epics-base/dbd/menuPost.dbd:
+/epics/epics-base/dbd/menuPriority.dbd:
+/epics/epics-base/dbd/menuYesNo.dbd:
+/epics/epics-base/dbd/menuSimm.dbd:
+/epics/epics-base/dbd/menuConvert.dbd:
+/epics/epics-base/dbd/menuScan.dbd:
+/epics/epics-base/dbd/stdRecords.dbd:
+/epics/epics-base/dbd/aaiRecord.dbd:
+/epics/epics-base/dbd/dbCommon.dbd:
+/epics/epics-base/dbd/aaoRecord.dbd:
+/epics/epics-base/dbd/aiRecord.dbd:
+/epics/epics-base/dbd/aoRecord.dbd:
+/epics/epics-base/dbd/aSubRecord.dbd:
+/epics/epics-base/dbd/biRecord.dbd:
+/epics/epics-base/dbd/boRecord.dbd:
+/epics/epics-base/dbd/calcRecord.dbd:
+/epics/epics-base/dbd/calcoutRecord.dbd:
+/epics/epics-base/dbd/compressRecord.dbd:
+/epics/epics-base/dbd/dfanoutRecord.dbd:
+/epics/epics-base/dbd/eventRecord.dbd:
+/epics/epics-base/dbd/fanoutRecord.dbd:
+/epics/epics-base/dbd/histogramRecord.dbd:
+/epics/epics-base/dbd/int64inRecord.dbd:
+/epics/epics-base/dbd/int64outRecord.dbd:
+/epics/epics-base/dbd/longinRecord.dbd:
+/epics/epics-base/dbd/longoutRecord.dbd:
+/epics/epics-base/dbd/lsiRecord.dbd:
+/epics/epics-base/dbd/lsoRecord.dbd:
+/epics/epics-base/dbd/mbbiRecord.dbd:
+/epics/epics-base/dbd/mbbiDirectRecord.dbd:
+/epics/epics-base/dbd/mbboRecord.dbd:
+/epics/epics-base/dbd/mbboDirectRecord.dbd:
+/epics/epics-base/dbd/permissiveRecord.dbd:
+/epics/epics-base/dbd/printfRecord.dbd:
+/epics/epics-base/dbd/selRecord.dbd:
+/epics/epics-base/dbd/seqRecord.dbd:
+/epics/epics-base/dbd/stateRecord.dbd:
+/epics/epics-base/dbd/stringinRecord.dbd:
+/epics/epics-base/dbd/stringoutRecord.dbd:
+/epics/epics-base/dbd/subRecord.dbd:
+/epics/epics-base/dbd/subArrayRecord.dbd:
+/epics/epics-base/dbd/waveformRecord.dbd:
+/epics/epics-base/dbd/filters.dbd:
+/epics/epics-base/dbd/links.dbd:
+/epics/epics-base/dbd/devSoft.dbd:
+/epics/epics-base/dbd/asSub.dbd:
+/epics/epics-base/dbd/dbCore.dbd:
+/epics/epics-base/dbd/rsrv.dbd:
+/epics/support/asyn/dbd/asyn.dbd:
+/epics/support/asyn/dbd/asynRecord.dbd:
+/epics/support/asyn/dbd/devEpics.dbd:
+/epics/support/asyn/dbd/devAsynOctet.dbd:
+/epics/support/asyn/dbd/devAsynInt32.dbd:
+/epics/support/asyn/dbd/devAsynXXXArray.dbd:
+/epics/support/asyn/dbd/devAsynInt32TimeSeries.dbd:
+/epics/support/asyn/dbd/devAsynUInt32Digital.dbd:
+/epics/support/asyn/dbd/devAsynFloat64.dbd:
+/epics/support/asyn/dbd/devAsynFloat64TimeSeries.dbd:
+/epics/support/asyn/dbd/devAsynRecord.dbd:
+/epics/support/asyn/dbd/devAsynOctetLs.dbd:
+/epics/support/asyn/dbd/devAsynInt64.dbd:
+/epics/support/asyn/dbd/devAsynInt64Array.dbd:
+/epics/support/asyn/dbd/devAsynInt64TimeSeries.dbd:
+/epics/support/asyn/dbd/devAsynInt64Misc.dbd:
+/epics/support/asyn/dbd/drvAsynIPPort.dbd:
+/epics/support/asyn/dbd/drvAsynSerialPort.dbd:
+/epics/support/modbus/dbd/modbusSupport.dbd:
 ../O.Common/ssrip-mps.dbd: ../Makefile

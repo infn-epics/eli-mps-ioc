@@ -1,28 +1,23 @@
 ssrip-mps_registerRecordDeviceDriver.o: \
  ssrip-mps_registerRecordDeviceDriver.cpp \
- ../../../modules/epicsmng/base-R7.0.7/include/compilerDependencies.h \
- ../../../modules/epicsmng/base-R7.0.7/include/compiler/gcc/compilerSpecific.h \
- ../../../modules/epicsmng/base-R7.0.7/include/epicsStdlib.h \
- ../../../modules/epicsmng/base-R7.0.7/include/libComAPI.h \
- ../../../modules/epicsmng/base-R7.0.7/include/os/Linux/osdStrtod.h \
- ../../../modules/epicsmng/base-R7.0.7/include/epicsTypes.h \
- ../../../modules/epicsmng/base-R7.0.7/include/compilerDependencies.h \
- ../../../modules/epicsmng/base-R7.0.7/include/errMdef.h \
- ../../../modules/epicsmng/base-R7.0.7/include/iocsh.h \
- ../../../modules/epicsmng/base-R7.0.7/include/iocshRegisterCommon.h \
- ../../../modules/epicsmng/base-R7.0.7/include/dbCoreAPI.h \
- ../../../modules/epicsmng/base-R7.0.7/include/registryCommon.h \
- ../../../modules/epicsmng/base-R7.0.7/include/dbStaticLib.h \
- ../../../modules/epicsmng/base-R7.0.7/include/dbFldTypes.h \
- ../../../modules/epicsmng/base-R7.0.7/include/dbBase.h \
- ../../../modules/epicsmng/base-R7.0.7/include/ellLib.h \
- ../../../modules/epicsmng/base-R7.0.7/include/dbDefs.h \
- ../../../modules/epicsmng/base-R7.0.7/include/recSup.h \
- ../../../modules/epicsmng/base-R7.0.7/include/devSup.h \
- ../../../modules/epicsmng/base-R7.0.7/include/link.h \
- ../../../modules/epicsmng/base-R7.0.7/include/cantProceed.h \
- ../../../modules/epicsmng/base-R7.0.7/include/dbJLink.h \
- ../../../modules/epicsmng/base-R7.0.7/include/dbCoreAPI.h \
- ../../../modules/epicsmng/base-R7.0.7/include/registryRecordType.h \
- ../../../modules/epicsmng/base-R7.0.7/include/recSup.h \
- ../../../modules/epicsmng/base-R7.0.7/include/shareLib.h
+ /epics/epics-base/include/compilerDependencies.h \
+ /epics/epics-base/include/compiler/gcc/compilerSpecific.h \
+ /epics/epics-base/include/epicsStdlib.h \
+ /epics/epics-base/include/libComAPI.h \
+ /epics/epics-base/include/os/Linux/osdStrtod.h \
+ /epics/epics-base/include/epicsTypes.h \
+ /epics/epics-base/include/compilerDependencies.h \
+ /epics/epics-base/include/errMdef.h /epics/epics-base/include/iocsh.h \
+ /epics/epics-base/include/iocshRegisterCommon.h \
+ /epics/epics-base/include/dbCoreAPI.h \
+ /epics/epics-base/include/registryCommon.h \
+ /epics/epics-base/include/dbStaticLib.h \
+ /epics/epics-base/include/dbFldTypes.h \
+ /epics/epics-base/include/dbBase.h /epics/epics-base/include/ellLib.h \
+ /epics/epics-base/include/dbDefs.h /epics/epics-base/include/recSup.h \
+ /epics/epics-base/include/devSup.h /epics/epics-base/include/drvSup.h \
+ /epics/epics-base/include/link.h /epics/epics-base/include/cantProceed.h \
+ /epics/epics-base/include/dbJLink.h \
+ /epics/epics-base/include/dbCoreAPI.h \
+ /epics/epics-base/include/registryRecordType.h \
+ /epics/epics-base/include/recSup.h /epics/epics-base/include/shareLib.h
