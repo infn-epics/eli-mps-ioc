@@ -566,8 +566,182 @@ record(bo, "$(PREFIX,undefined):BYPASS:LLRF:3") {
     field(ZNAM, "NoBypass")
     field(ONAM, "Bypass")
 }
+record(bo, "$(PREFIX,undefined):BYPASS:LLRF:4") {
+    field(DESC, "Bypass LLRF 4")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:LLRF_SP.B4 PP")
+    field(ZNAM, "NoBypass")
+    field(ONAM, "Bypass")
+}
+record(bo, "$(PREFIX,undefined):BYPASS:LLRF:5") {
+    field(DESC, "Bypass LLRF 5")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:LLRF_SP.B5 PP")
+    field(ZNAM, "NoBypass")
+    field(ONAM, "Bypass")
+}
+record(bo, "$(PREFIX,undefined):BYPASS:LLRF:6") {
+    field(DESC, "Bypass LLRF 6")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:LLRF_SP.B6 PP")
+    field(ZNAM, "NoBypass")
+    field(ONAM, "Bypass")
+}
+record(bo, "$(PREFIX,undefined):BYPASS:LLRF:7") {
+    field(DESC, "Bypass LLRF 7")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:LLRF_SP.B7 PP")
+    field(ZNAM, "NoBypass")
+    field(ONAM, "Bypass")
+}
+record(bo, "$(PREFIX,undefined):BYPASS:LLRF:8") {
+    field(DESC, "Bypass LLRF 8")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:LLRF_SP.B8 PP")
+    field(ZNAM, "NoBypass")
+    field(ONAM, "Bypass")
+}
+record(bo, "$(PREFIX,undefined):BYPASS:LLRF:9") {
+    field(DESC, "Bypass LLRF 9")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:LLRF_SP.B9 PP")
+    field(ZNAM, "NoBypass")
+    field(ONAM, "Bypass")
+}
+record(bo, "$(PREFIX,undefined):BYPASS:LLRF:10") {
+    field(DESC, "Bypass LLRF 10")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:LLRF_SP.BA PP")
+    field(ZNAM, "NoBypass")
+    field(ONAM, "Bypass")
+}
+record(bo, "$(PREFIX,undefined):BYPASS:LLRF:11") {
+    field(DESC, "Bypass LLRF 11")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:LLRF_SP.BB PP")
+    field(ZNAM, "NoBypass")
+    field(ONAM, "Bypass")
+}
+record(bo, "$(PREFIX,undefined):BYPASS:LLRF:12") {
+    field(DESC, "Bypass LLRF 12")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:LLRF_SP.BC PP")
+    field(ZNAM, "NoBypass")
+    field(ONAM, "Bypass")
+}
+record(bo, "$(PREFIX,undefined):BYPASS:LLRF:13") {
+    field(DESC, "Bypass LLRF 13")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:LLRF_SP.BD PP")
+    field(ZNAM, "NoBypass")
+    field(ONAM, "Bypass")
+}
+record(bo, "$(PREFIX,undefined):BYPASS:LLRF:14") {
+    field(DESC, "Bypass LLRF 14")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:LLRF_SP.BE PP")
+    field(ZNAM, "NoBypass")
+    field(ONAM, "Bypass")
+}
+record(bo, "$(PREFIX,undefined):BYPASS:LLRF:15") {
+    field(DESC, "Bypass LLRF 15")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:LLRF_SP.BF PP")
+    field(ZNAM, "NoBypass")
+    field(ONAM, "Bypass")
+}
+record(mbboDirect,"$(PREFIX,undefined):BYPASS:LLRF_SP") {
+    field(DESC, "Bypass: LLRF devices")
+    #field(DTYP, "asynInt32")
+    #field(OUT,  "@asyn($(MPS_ASYNPORT,undefined)_BYPASS_LLRF_SP 0)INT32_BE")
+    field(DTYP, "asynUInt32Digital")
+    field(OUT,  "@asynMask($(MPS_ASYNPORT,undefined)_BYPASS_LLRF_SP 1 0xFFFF)")
+}
 
-
+record(bo, "$(PREFIX,undefined):BYPASS:LLRF:16") {
+    field(DESC, "Bypass LLRF 16")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:LLRF_SP.B10 PP")
+    field(ZNAM, "NoBypass")
+    field(ONAM, "Bypass")
+}
+record(bo, "$(PREFIX,undefined):BYPASS:LLRF:17") {
+    field(DESC, "Bypass LLRF 17")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:LLRF_SP.B11 PP")
+    field(ZNAM, "NoBypass")
+    field(ONAM, "Bypass")
+}
+record(bo, "$(PREFIX,undefined):BYPASS:LLRF:18") {
+    field(DESC, "Bypass LLRF 18")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:LLRF_SP.B12 PP")
+    field(ZNAM, "NoBypass")
+    field(ONAM, "Bypass")
+}
+record(bo, "$(PREFIX,undefined):BYPASS:LLRF:19") {
+    field(DESC, "Bypass LLRF 19")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:LLRF_SP.B13 PP")
+    field(ZNAM, "NoBypass")
+    field(ONAM, "Bypass")
+}
+record(bo, "$(PREFIX,undefined):BYPASS:LLRF:20") {
+    field(DESC, "Bypass LLRF 20")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:LLRF_SP.B14 PP")
+    field(ZNAM, "NoBypass")
+    field(ONAM, "Bypass")
+}
+record(bo, "$(PREFIX,undefined):BYPASS:LLRF:21") {
+    field(DESC, "Bypass LLRF 21")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:LLRF_SP.B15 PP")
+    field(ZNAM, "NoBypass")
+    field(ONAM, "Bypass")
+}
+record(bo, "$(PREFIX,undefined):BYPASS:LLRF:22") {
+    field(DESC, "Bypass LLRF 22")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:LLRF_SP.B16 PP")
+    field(ZNAM, "NoBypass")
+    field(ONAM, "Bypass")
+}
+record(bo, "$(PREFIX,undefined):BYPASS:LLRF:23") {
+    field(DESC, "Bypass LLRF 23")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:LLRF_SP.B17 PP")
+    field(ZNAM, "NoBypass")
+    field(ONAM, "Bypass")
+}
+record(bo, "$(PREFIX,undefined):BYPASS:LLRF:24") {
+    field(DESC, "Bypass LLRF 24")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:LLRF_SP.B18 PP")
+    field(ZNAM, "NoBypass")
+    field(ONAM, "Bypass")
+}
+record(bo, "$(PREFIX,undefined):BYPASS:LLRF:25") {
+    field(DESC, "Bypass LLRF 25")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:LLRF_SP.B19 PP")
+    field(ZNAM, "NoBypass")
+    field(ONAM, "Bypass")
+}
+record(bo, "$(PREFIX,undefined):BYPASS:LLRF:26") {
+    field(DESC, "Bypass LLRF 26")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:LLRF_SP.B1A PP")
+    field(ZNAM, "NoBypass")
+    field(ONAM, "Bypass")
+}
+record(bo, "$(PREFIX,undefined):BYPASS:LLRF:27") {
+    field(DESC, "Bypass LLRF 27")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:LLRF_SP.B1B PP")
+    field(ZNAM, "NoBypass")
+    field(ONAM, "Bypass")
+}
+record(bo, "$(PREFIX,undefined):BYPASS:LLRF:28") {
+    field(DESC, "Bypass LLRF 28")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:LLRF_SP.B1C PP")
+    field(ZNAM, "NoBypass")
+    field(ONAM, "Bypass")
+}
+record(bo, "$(PREFIX,undefined):BYPASS:LLRF:29") {
+    field(DESC, "Bypass LLRF 29")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:LLRF_SP.B1D PP")
+    field(ZNAM, "NoBypass")
+    field(ONAM, "Bypass")
+}
+record(bo, "$(PREFIX,undefined):BYPASS:LLRF:30") {
+    field(DESC, "Bypass LLRF 30")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:LLRF_SP.B1E PP")
+    field(ZNAM, "NoBypass")
+    field(ONAM, "Bypass")
+}
+record(bo, "$(PREFIX,undefined):BYPASS:LLRF:31") {
+    field(DESC, "Bypass LLRF 31")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:LLRF_SP.B1F PP")
+    field(ZNAM, "NoBypass")
+    field(ONAM, "Bypass")
+}
 
 record(mbboDirect,"$(PREFIX,undefined):BYPASS:MOD_SP") {
     field(DESC, "Bypass: Modulator devices")
@@ -578,33 +752,236 @@ record(mbboDirect,"$(PREFIX,undefined):BYPASS:MOD_SP") {
 }
 
 record(bo, "$(PREFIX,undefined):BYPASS:MOD:0") {
-    field(DESC, "Bypass MOD 0")
+    field(DESC, "Bypass MOD bit0")
     field(OUT,  "$(PREFIX,undefined):BYPASS:MOD_SP.B0 PP")
     field(ZNAM, "NoBypass")
     field(ONAM, "Bypass")
 }
 
 record(bo, "$(PREFIX,undefined):BYPASS:MOD:1") {
-    field(DESC, "Bypass MOD 1")
+    field(DESC, "Bypass MOD bit1")
     field(OUT,  "$(PREFIX,undefined):BYPASS:MOD_SP.B1 PP")
     field(ZNAM, "NoBypass")
     field(ONAM, "Bypass")
 }
 
 record(bo, "$(PREFIX,undefined):BYPASS:MOD:2") {
-    field(DESC, "Bypass MOD 2")
+    field(DESC, "Bypass MOD bit2")
     field(OUT,  "$(PREFIX,undefined):BYPASS:MOD_SP.B2 PP")
     field(ZNAM, "NoBypass")
     field(ONAM, "Bypass")
 }
 
 record(bo, "$(PREFIX,undefined):BYPASS:MOD:3") {
-    field(DESC, "Bypass MOD 3")
+    field(DESC, "Bypass MOD bit3")
     field(OUT,  "$(PREFIX,undefined):BYPASS:MOD_SP.B3 PP")
     field(ZNAM, "NoBypass")
     field(ONAM, "Bypass")
 }
 
+record(bo, "$(PREFIX,undefined):BYPASS:MOD:4") {
+    field(DESC, "Bypass MOD bit4")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:MOD_SP.B4 PP")
+    field(ZNAM, "NoBypass")
+    field(ONAM, "Bypass")
+}
+
+record(bo, "$(PREFIX,undefined):BYPASS:MOD:5") {
+    field(DESC, "Bypass MOD bit5")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:MOD_SP.B5 PP")
+    field(ZNAM, "NoBypass")
+    field(ONAM, "Bypass")
+}
+
+record(bo, "$(PREFIX,undefined):BYPASS:MOD:6") {
+    field(DESC, "Bypass MOD bit6")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:MOD_SP.B6 PP")
+    field(ZNAM, "NoBypass")
+    field(ONAM, "Bypass")
+}
+
+record(bo, "$(PREFIX,undefined):BYPASS:MOD:7") {
+    field(DESC, "Bypass MOD bit7")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:MOD_SP.B7 PP")
+    field(ZNAM, "NoBypass")
+    field(ONAM, "Bypass")
+}
+
+record(bo, "$(PREFIX,undefined):BYPASS:MOD:8") {
+    field(DESC, "Bypass MOD bit8")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:MOD_SP.B8 PP")
+    field(ZNAM, "NoBypass")
+    field(ONAM, "Bypass")
+}
+
+record(bo, "$(PREFIX,undefined):BYPASS:MOD:9") {
+    field(DESC, "Bypass MOD bit9")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:MOD_SP.B9 PP")
+    field(ZNAM, "NoBypass")
+    field(ONAM, "Bypass")
+}
+
+record(bo, "$(PREFIX,undefined):BYPASS:MOD:10") {
+    field(DESC, "Bypass MOD bit10")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:MOD_SP.BA PP")
+    field(ZNAM, "NoBypass")
+    field(ONAM, "Bypass")
+}
+
+record(bo, "$(PREFIX,undefined):BYPASS:MOD:11") {
+    field(DESC, "Bypass MOD bit11")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:MOD_SP.BB PP")
+    field(ZNAM, "NoBypass")
+    field(ONAM, "Bypass")
+}
+
+record(bo, "$(PREFIX,undefined):BYPASS:MOD:12") {
+    field(DESC, "Bypass MOD bit12")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:MOD_SP.BC PP")
+    field(ZNAM, "NoBypass")
+    field(ONAM, "Bypass")
+}
+
+record(bo, "$(PREFIX,undefined):BYPASS:MOD:13") {
+    field(DESC, "Bypass MOD bit13")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:MOD_SP.BD PP")
+    field(ZNAM, "NoBypass")
+    field(ONAM, "Bypass")
+}
+
+record(bo, "$(PREFIX,undefined):BYPASS:MOD:14") {
+    field(DESC, "Bypass MOD bit14")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:MOD_SP.BE PP")
+    field(ZNAM, "NoBypass")
+    field(ONAM, "Bypass")
+}
+
+record(bo, "$(PREFIX,undefined):BYPASS:MOD:15") {
+    field(DESC, "Bypass MOD bit15")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:MOD_SP.BF PP")
+    field(ZNAM, "NoBypass")
+    field(ONAM, "Bypass")
+}
+
+record(mbboDirect,"$(PREFIX,undefined):BYPASS:MOD_SP") {
+    field(DESC, "Bypass: Modulator devices")
+    #field(DTYP, "asynInt32")
+    #field(OUT,  "@asyn($(MPS_ASYNPORT,undefined)_BYPASS_MOD_SP 0)INT32_BE")
+    field(DTYP, "asynUInt32Digital")
+    field(OUT,  "@asynMask($(MPS_ASYNPORT,undefined)_BYPASS_MOD_SP 1 0xFFFF)")
+}
+
+record(bo, "$(PREFIX,undefined):BYPASS:MOD:16") {
+    field(DESC, "Bypass MOD bit16")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:MOD_SP.B10 PP")
+    field(ZNAM, "NoBypass")
+    field(ONAM, "Bypass")
+}
+
+record(bo, "$(PREFIX,undefined):BYPASS:MOD:17") {
+    field(DESC, "Bypass MOD bit17")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:MOD_SP.B11 PP")
+    field(ZNAM, "NoBypass")
+    field(ONAM, "Bypass")
+}
+
+record(bo, "$(PREFIX,undefined):BYPASS:MOD:18") {
+    field(DESC, "Bypass MOD bit18")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:MOD_SP.B12 PP")
+    field(ZNAM, "NoBypass")
+    field(ONAM, "Bypass")
+}
+
+record(bo, "$(PREFIX,undefined):BYPASS:MOD:19") {
+    field(DESC, "Bypass MOD bit19")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:MOD_SP.B13 PP")
+    field(ZNAM, "NoBypass")
+    field(ONAM, "Bypass")
+}
+
+record(bo, "$(PREFIX,undefined):BYPASS:MOD:20") {
+    field(DESC, "Bypass MOD bit20")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:MOD_SP.B14 PP")
+    field(ZNAM, "NoBypass")
+    field(ONAM, "Bypass")
+}
+
+record(bo, "$(PREFIX,undefined):BYPASS:MOD:21") {
+    field(DESC, "Bypass MOD bit21")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:MOD_SP.B15 PP")
+    field(ZNAM, "NoBypass")
+    field(ONAM, "Bypass")
+}
+
+record(bo, "$(PREFIX,undefined):BYPASS:MOD:22") {
+    field(DESC, "Bypass MOD bit22")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:MOD_SP.B16 PP")
+    field(ZNAM, "NoBypass")
+    field(ONAM, "Bypass")
+}
+
+record(bo, "$(PREFIX,undefined):BYPASS:MOD:23") {
+    field(DESC, "Bypass MOD bit23")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:MOD_SP.B17 PP")
+    field(ZNAM, "NoBypass")
+    field(ONAM, "Bypass")
+}
+
+record(bo, "$(PREFIX,undefined):BYPASS:MOD:24") {
+    field(DESC, "Bypass MOD bit24")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:MOD_SP.B18 PP")
+    field(ZNAM, "NoBypass")
+    field(ONAM, "Bypass")
+}
+
+record(bo, "$(PREFIX,undefined):BYPASS:MOD:25") {
+    field(DESC, "Bypass MOD bit25")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:MOD_SP.B19 PP")
+    field(ZNAM, "NoBypass")
+    field(ONAM, "Bypass")
+}
+
+record(bo, "$(PREFIX,undefined):BYPASS:MOD:26") {
+    field(DESC, "Bypass MOD bit26")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:MOD_SP.B1A PP")
+    field(ZNAM, "NoBypass")
+    field(ONAM, "Bypass")
+}
+
+record(bo, "$(PREFIX,undefined):BYPASS:MOD:27") {
+    field(DESC, "Bypass MOD bit27")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:MOD_SP.B1B PP")
+    field(ZNAM, "NoBypass")
+    field(ONAM, "Bypass")
+}
+
+record(bo, "$(PREFIX,undefined):BYPASS:MOD:28") {
+    field(DESC, "Bypass MOD bit28")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:MOD_SP.B1C PP")
+    field(ZNAM, "NoBypass")
+    field(ONAM, "Bypass")
+}
+
+record(bo, "$(PREFIX,undefined):BYPASS:MOD:29") {
+    field(DESC, "Bypass MOD bit29")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:MOD_SP.B1D PP")
+    field(ZNAM, "NoBypass")
+    field(ONAM, "Bypass")
+}
+
+record(bo, "$(PREFIX,undefined):BYPASS:MOD:30") {
+    field(DESC, "Bypass MOD bit30")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:MOD_SP.B1E PP")
+    field(ZNAM, "NoBypass")
+    field(ONAM, "Bypass")
+}
+
+record(bo, "$(PREFIX,undefined):BYPASS:MOD:31") {
+    field(DESC, "Bypass MOD bit31")
+    field(OUT,  "$(PREFIX,undefined):BYPASS:MOD_SP.B1F PP")
+    field(ZNAM, "NoBypass")
+    field(ONAM, "Bypass")
+}
 
 record(ai,"$(PREFIX,undefined):ILK:VAC_COR") {
     field(DESC, "VAC Coridor ilks word")
